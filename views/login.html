@@ -1,0 +1,14 @@
+<menu-directive></menu-directive>
+<div class="login-wrapper">
+  <span class='login-test'>
+    <h1>LOGIN</h1>
+    <input ng-model='userName' type="text" placeholder="username">
+    <br>
+    <input ng-model='userPassword' type="text" placeholder="password">
+    <br>
+    <button ng-click='login(userName, userPassword)' type="button">Submit</button>
+    <p ui-sref='createAcct' style="font-family: Bree Serif; cursor: pointer; cursor: hand;">Create an account</p>
+    <span ui-sref='search' style="font-family: Bree Serif; cursor: pointer; cursor: hand;">Continue without Account</span>
+  </span>
+</div>
+<!-- ui-sref='home'  -->

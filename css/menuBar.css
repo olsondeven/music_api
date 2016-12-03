@@ -1,0 +1,74 @@
+.material-icons.md-48 {
+  /*font-size: 48px;*/
+  width: inherit;
+  font-size: 48px;
+}
+.menu-wrapper{
+  height: 100%;
+  width: 5vw;
+  background-color: rgb(30, 30, 30);
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu-btn:hover{
+  color: rgb(217, 217, 217);
+}
+.menu-btn{
+  display: flex;
+  flex-direction: column;
+  /*width: 100%;*/
+  /*border: 1px solid red;*/
+  text-align: center;
+}
+.setting-option:hover{
+  font-weight: 800;
+}
+.setting-user{
+  width: 100%;
+  background-color: rgb(30, 30, 30);
+  border-radius: inherit;
+}
+.img-wrapper{
+  text-align: center;
+  /*border: 1px solid red;*/
+}
+.hand{
+  cursor: pointer;
+  cursor: hand;
+}
+.menu-btn-container{
+  margin: 0;
+  width: 100%;
+  height: 60vh;
+  /*border: 1px solid green;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.setting{
+  /*display: none;*/
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.setting-pop{
+  color: rgb(217, 217, 217);
+  display: none;
+  position: absolute;
+  bottom: 11px;
+  left: 11px;
+  height: 15vh;
+  width: 15vw;
+  border: 1px solid rgb(129, 129, 129);
+  border-radius: 10px;
+  background-color: rgba(189, 189, 189, .3);
+}

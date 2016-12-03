@@ -27,6 +27,10 @@ span{
 p{
   font-family: Bree Serif;
 }
+.hand{
+  cursor: pointer;
+  cursor: hand;
+}
 .menu-placeholder{
   height: 100vh;
   width:  8vw;

@@ -3,13 +3,6 @@ angular.module('noServerProject').directive('menuDirective',function(mainService
     restrict: 'EA',
     templateUrl: './views/menuBar.html',
     link: function(scope, element, attribute){
-      // element.css('z-index','1000');
-      scope.currentUser = mainService.getCurrentUser();
-      scope.logout = function() {
-          mainService.logout();
-          scope.currentUser = mainService.getCurrentUser();
-          // console.log('directive logout fn', scope.currentUser);
-      };
       $('.setting').on('mouseenter',function(){
         $('.setting-pop').show('animated');
       });
@@ -18,7 +11,12 @@ angular.module('noServerProject').directive('menuDirective',function(mainService
       });
     },
     controller: function($scope,mainService){
-      $scope.currentUser = mainService.getCurrentUser();
+          $scope.currentUser = mainService.getCurrentUser();
+          $scope.logout = function() {
+          $scope.displayBoxBool = mainService.logout();
+          $scope.currentUser = mainService.getCurrentUser();
+          // console.log('directive logout fn', scope.currentUser);
+      };
       // console.log('\$directive', $scope.currentUser);
     }
   };

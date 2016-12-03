@@ -3,11 +3,11 @@ angular.module('noServerProject').directive('midiDirective', ['$document', '$roo
         restrict: 'AE',
         templateUrl: './views/midiView.html',
         link: function(scope, element, attribute) {
-          //------------------------------midi-toggleshow----------------------------------
-          // $('midi-directive').hide();
-          // $('#midibtn').on('click', function(){
-          //   $('midi-directive').slideToggle(400);
-          // });
+            //------------------------------midi-toggleshow----------------------------------
+            // $('midi-directive').hide();
+            // $('#midibtn').on('click', function(){
+            //   $('midi-directive').slideToggle(400);
+            // });
             //------------------------------------------------------------play audio-----------------------------------------------------------------------------
             scope.playAudio = function(selected) {
                 var audio = new Audio(selected);
@@ -47,14 +47,67 @@ angular.module('noServerProject').directive('midiDirective', ['$document', '$roo
                 $document.off('mouseup', mouseup);
             }
             // ----------------------------------------------------------------------end-drag-----------------------------------------------------------------------------------
-            //---------------------------------------------------------key-press------------------------------------------------------------------------------------------------
-            // scope.fn = function(event) {
-            //     scope.keyCode = event.keyCode;
-            //     if (event.keyCode == 32) {
-            //         console.log("spacebar pressed");
-            //     };
-            // };
-            //---------------------------------------------------------end-key-press-------------------------------------------------------------------------------------------
+        },
+        controller: function($scope) {
+            var dubStep = new Audio('./audio/funk_dubstep_loop.wav');
+            var wob = new Audio('./audio/wob_loop.wav');
+            var catDrum = new Audio('./audio/catDrum_loop.wav');
+
+            // setInterval(function () {
+            //   // console.log(audio.currentTime);
+            //   $scope.cur = audio.currentTime;
+            //   $scope.dur = audio.duration;
+            //   // console.log('durations',dur);
+            //   // scope.digest();
+            // }, 100);
+            document.addEventListener('keydown' || 'keyup', function() {
+                if (event.keyCode === 110) { //.
+                    audio = new Audio('./audio/nice_pluck.wav');
+                    // setInterval(function() {
+                    //     $scope.cur = audio.currentTime;
+                    //     $scope.dur = audio.duration;
+                    //     // $scope.$digest();
+                    // }, 10);
+                    audio.play();
+                }
+                if (event.keyCode === 96) { //0
+                    audio = new Audio('./audio/nice_kick.wav');
+                    audio.play();
+                }
+                if (event.keyCode === 97) { //1
+                    var audio = new Audio('./audio/caw.wav');
+                    audio.play();
+                }
+                if (event.keyCode === 98) { //2
+                    var audio = new Audio('./audio/rap_clap.wav');
+                    audio.play();
+                }
+                if (event.keyCode === 99) { //3
+                    var audio = new Audio('./audio/nice_clap.wav');
+                    audio.play();
+                }
+                if (event.keyCode === 100) { //4
+                    var audio = new Audio('./audio/wob.wav');
+                    audio.play();
+                }
+                if (event.keyCode === 101) { //5
+                    var audio = new Audio('./audio/nice_robot.wav');
+                    audio.play();
+                }
+                if (event.keyCode === 102) { //6
+                    var audio = new Audio('./audio/nice_ijah.wav');
+                    audio.play();
+                }
+                if (event.keyCode === 103) { //7
+                    dubStep.play();
+                }
+                if (event.keyCode === 104) { //8
+                    wob.play();
+                }
+                if (event.keyCode === 105) { //9
+                    catDrum.play();
+                }
+            });
+        }
     }
-};
 }]); //closing

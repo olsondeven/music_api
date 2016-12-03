@@ -1,16 +1,31 @@
-<!-- <menu-directive></menu-directive>
+<menu-directive></menu-directive>
+
 <div class="favorites-wrapper">
+
 <div class="fav-header">
-  <h1 id="btn-fav-artists"class="hand">view artists</h1><h1 id="btn-fav-albums"class="hand">view albums</h1><h1 id="btn-fav-tracks" class="hand">view songs</h1>
+<h1 class="fav-user">{{currentUser.userName}}</h1>
+<h1 ng-click='displayFav("artists")'class="hand selected">view artists</h1>
+<h1 ng-click='displayFav("albums")'class="hand selected">view albums</h1>
+<h1 ng-click='displayFav("tracks")'class="hand selected">view songs</h1>
 </div>
+
 <span class="result-wrapper">
-<div id="display-fav-artists"class="display-box">
-    <div class="artist-card" ng-repeat='obj in listArtists'>
-      <div class="artist-img-wrapper">
-        <img class="artist-img" ng-src="{{obj.images[0].url}}" alt="Image of {{obj.name}}">
+
+  <div ng-if='!displayBoxBool'class="display-box">
+    <div class="artist-card" ng-repeat='obj in arrayObj | filter: searchTxtArtist.name | filter: searchTxtAlbum | filter: searchTxtSong'>
+      <!-- <i  class="material-icons fav-btn" ng-click='liked(obj)'>thumb_up</i> -->
+        <div class="artist-img-wrapper">
+          <img ng-if='artistsBool || albumsBool' class="artist-img" ng-src="{{obj.images[0].url}}" alt="Image of {{obj.name}}">
+          <img ng-if='tracksBool' class="artist-img" ng-src="{{obj.album.images[0].url}}" alt="Image of {{obj.name}}">
+        </div>
+        <h2 ng-if='artistsBool'>{{obj.name}}</h2>
+        <p ng-if='albumsBool || tracksBool'>{{obj.name}} <span style="color: gray; font-family: Bree Serif;">by</span> {{obj.artists[0].name}}</p>
+        <audio ng-if='tracksBool' controls="controls">
+          <source ng-src="{{trustSrc(obj.preview_url)}}" type="audio/mp3">
+        </audio>
       </div>
-    <h2>{{obj.name}}</h2>
-  </div>
-</div>
+    </div>
+
 </span>
-</div> -->
+
+</div>

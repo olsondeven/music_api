@@ -15,8 +15,8 @@
       </div>
 
 
-        <div class="display-box">
-          <div class="artist-card" ng-repeat='obj in arrayObj | filter: searchTxtArtist.name | filter: searchTxtAlbum | filter: searchTxtSong'>
+        <div ng-if='!displayBoxBool'class="display-box">
+          <div class="artist-card hand" ng-repeat='obj in arrayObj | filter: searchTxtArtist.name | filter: searchTxtAlbum | filter: searchTxtSong'>
             <i  class="material-icons fav-btn" ng-click='liked(obj)'>thumb_up</i>
               <div class="artist-img-wrapper">
                 <img ng-if='artistsBool || albumsBool' class="artist-img" ng-src="{{obj.images[0].url}}" alt="Image of {{obj.name}}">

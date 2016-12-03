@@ -1,24 +1,7 @@
 angular.module('noServerProject').controller('mainCtrl', function($scope, $sce, $timeout, mainService) {
-    //-------------------------------------------------------------------trial for midi controller-------------------------------------------------------------------------//
-    // $scope.keydownevt = function() {
-    //     $scope.keydownkeycode = event.keyCode;
-    //     $scope.keyupkeycode = "";
-    //     $scope.keypresskeycode = "";
-    // };
-    // $scope.keyupevt = function() {
-    //     $scope.keyupkeycode = event.keyCode;
-    // };
-    // $scope.keypressevt = function() {
-    //     $scope.keypresskeycode = event.keyCode;
-    // };
-    //------------------------------------------------------------------end trial----------------------------------------------------------------------------------//
-    // $scope.currentUser = mainService.getCurrentUser();
-    // $timeout(function () {
-    //   console.log('mainCtrl TIMOUT',$scope.currentUser);
-    // }, 2000);
-    // console.log('mainCtrl',$scope.currentUser);
     //-------------------------------------------searchfunctions-----------------------------------------------------------------------------------------------//
     $scope.search = function(str, type) {
+      // console.log(event.keyCode);
         if (str !== '') {
             mainService.search(str, type).then(function(response) {
                 if (type === 'artist') {
@@ -125,5 +108,7 @@ angular.module('noServerProject').controller('mainCtrl', function($scope, $sce, 
     };
     //--------------------------------------end trust-Src-function----------------------------//
     //--------------------------------------end search----------------------------------------------------------------------------------------------------//
-    $scope.liked = mainService.saveInfo;
+    $scope.liked = function(obj){
+      mainService.saveInfo(obj);
+    };
 }); //closing

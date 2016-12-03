@@ -18,6 +18,16 @@ noServerProject.config(function($stateProvider, $urlRouterProvider) {
         //     templateUrl: './views/home.html',
         //     controller: 'mainCtrl'
         // })
+        .state('artist',{
+          url: '/artist',//and the artist name to the back of this
+          templateUrl: './views/artist.html',
+          contorller: 'artistCtrl'
+        })
+        .state('album',{
+          url: '/album',
+          templateUrl: './views/album.html',
+          controller: 'albumCtrl'
+        })
         .state('search', {
             url: '/search',
             templateUrl: './views/search.html',

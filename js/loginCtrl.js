@@ -1,4 +1,5 @@
-noServerProject.controller('loginCtrl', function($scope, $timeout, mainService) {
+noServerProject.controller('loginCtrl', function($scope, $timeout,$state, mainService) {
+  $scope.currentUser = mainService.getCurrentUser();
   var count = 0;
     // $scope.currentUser = mainService.getCurrentUser();
     // $timeout(function() {
@@ -9,14 +10,20 @@ noServerProject.controller('loginCtrl', function($scope, $timeout, mainService) 
     //     });
     // }, 2000);
     //create user----------------------------------------------------------------------//
+    // console.log($scope.currentUser);
+    if($scope.currentUser){
+      $state.go('favorites');
+    }
     $scope.createUser = function(n, p, cP) {
         if (!n || !p || !cP) {
-            alert('complete required fields');
+            swal('complete required fields');
         } else {
             if (p === cP) {
                 mainService.createUser(n, p), $scope.newUserName = "", $scope.newUserPassword = "", $scope.confirmUserPassword = "";
             } else {
-                alert('password did not match');
+              $scope.newUserPassword = '';
+              $scope.confirmUserPassword = '';
+              swal('password did not match');
             }
         }
     };

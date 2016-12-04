@@ -10,7 +10,14 @@ angular.module('noServerProject').directive('menuDirective',function(mainService
         $('.setting-pop').hide('animated');
       });
     },
-    controller: function($scope,mainService){
+    controller: function($scope,$state,mainService){
+          $scope.noFav = function(){
+            if($scope.currentUser){
+              $state.go('favorites');
+            }else{
+              swal('Please login to see favorites');
+            }
+          }
           $scope.currentUser = mainService.getCurrentUser();
           $scope.logout = function() {
           $scope.displayBoxBool = mainService.logout();

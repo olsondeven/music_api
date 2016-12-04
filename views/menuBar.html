@@ -1,22 +1,22 @@
 <div class="menu-wrapper">
     <div class="menu-btn-container">
         <div class="img-wrapper">
-            <img src="./img/icon.png" width='80%' alt="spotifyIcon" />
+            <img src="./img/grey.png" width='80%' alt="spotifyIcon" />
         </div>
-        <span class="hand menu-btn" ui-sref='search'><i class="material-icons md-48">search</i><span>Search</span></span>
-        <span class="hand menu-btn" ui-sref='favorites'><i class="material-icons md-48">library_music</i><span>Favorites</span></span>
-        <span id='midibtn' class="hand menu-btn" ui-sref='midiPage'><i class="material-icons md-48">music_note</i><span>MIDI CTRL</span></span>
+        <span class="hand menu-btn" ui-sref='search'><i class="material-icons md-48">search</i><span class="menu-txt">Search</span></span>
+        <span ng-click='noFav()' class="hand menu-btn"><i class="material-icons md-48">library_music</i><span class="menu-txt">Favorites</span></span>
+        <span id='midibtn' class="hand menu-btn" ui-sref='midiPage'><i class="material-icons md-48">music_note</i><span class="menu-txt">MIDI CTRL</span></span>
     </div>
     <span class="setting">
       <div class="setting-pop">
         <div class="setting-user">
-            <b></b><b>{{currentUser.userName}}</b>
+            <b></b><b class="current-menu">{{currentUser.userName}}</b>
         </div>
         <p ui-sref='login' class="hand setting-option">Login</p>
         <p class="hand setting-option" ng-click='logout()'>Logout</p>
         <p> </p>
       </div>
-      <b>{{currentUser.userName}}</b>
-      <i id="setting-wheel" class="material-icons md-36 hand menu-btn">settings</i>
+      <b class="current-menu">{{currentUser.userName}}</b>
+      <i id="setting-wheel" class="material-icons md-36 hand">settings</i>
     </span>
 </div>

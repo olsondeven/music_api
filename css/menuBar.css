@@ -1,16 +1,19 @@
 .material-icons.md-48 {
-  font-size: 48px;
+  font-size: 36px;
+}
+.menu-txt{
+  font-size: 13px;
 }
 #setting-wheel{
   padding-bottom: 5px;
 }
 .material-icons.md-24 {
-  font-size: 36px;
+  font-size: 19px;
 }
 .menu-wrapper{
-  height: 100%;
-  width: 5vw;
-  background-color: rgb(30, 30, 30);
+  height: 950px;
+  width: 85px;
+  background-color: #1C1C1F;
   position: fixed;
   left: 0;
   top: 0;
@@ -18,9 +21,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  /*border: 1px solid red;*/
 }
 .menu-btn:hover{
-  color: rgb(217, 217, 217);
+  color: #DFE0E6;
 }
 .btn-green{
   border-left: 2px solid green;
@@ -35,13 +39,14 @@
   padding: 5px 20px;
 }
 .setting-option:hover{
-  font-weight: 800;
+  color: #DFE0E6;
 }
 .setting-user{
   width: 100%;
-  background-color: rgb(30, 30, 30);
+  background-color: #1C1C1F;
   border-radius: inherit;
 }
+
 .img-wrapper{
   text-align: center;
   /*border: 1px solid red;*/
@@ -49,7 +54,8 @@
 .menu-btn-container{
   margin: 0;
   width: 100%;
-  height: 60vh;
+  height: 470px;
+  font-size: 19px;
   /*border: 1px solid green;*/
   display: flex;
   flex-direction: column;
@@ -66,14 +72,17 @@
   align-items: center;
 }
 .setting-pop{
-  color: rgb(217, 217, 217);
+  /*color: #59595C;*/
   display: none;
   position: absolute;
   bottom: 1px;
   left: 1px;
   height: auto;
   width: auto;
-  border: 1px solid rgb(129, 129, 129);
+  border: 1.5px solid rgba(129, 129, 129,.9);
   border-radius: 10px;
-  background-color: rgb(98, 98, 98);
+  background-color: #121314;
+}
+.current-menu{
+  color: #DFE0E6;
 }

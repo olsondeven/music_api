@@ -2,7 +2,10 @@
 body{
   margin: 0;
   box-sizing: border-box;
-  color: #aaa;
+  background-color: red;
+  /*color: #FFFFFF; bright*/
+  color: #59595C; faded
+  /*hover:#DFE0E6*/
 }
 main{
   display: flex;
@@ -12,7 +15,7 @@ img{
   max-height: 100%;
 }
 h1{
-  color: white;
+  color: #FFFFFF;
   font-family: Bree Serif;
 }
 h2{
@@ -32,15 +35,15 @@ p{
   cursor: hand;
 }
 .menu-placeholder{
-  height: 100vh;
-  width:  8vw;
+  height: 950px;
+  width: 85px;
 }
-.midi-page{
-  width: 95vw;
+/*.midi-page{
+  width: 95.54688vw;
   height: 100%;
   background-color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
+}*/

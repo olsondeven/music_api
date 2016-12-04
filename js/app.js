@@ -13,11 +13,6 @@ noServerProject.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: './views/createAcct.html',
             controller: 'loginCtrl'
         })
-        // .state('home', {
-        //     url: '/home',
-        //     templateUrl: './views/home.html',
-        //     controller: 'mainCtrl'
-        // })
         .state('artist',{
           url: '/artist',//and the artist name to the back of this
           templateUrl: './views/artist.html',

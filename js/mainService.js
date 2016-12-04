@@ -23,6 +23,7 @@ angular.module('noServerProject').service('mainService', function($http, $q, $st
   //logout----------------------------------------------------------------------------------------------------------------------------------//
   this.logout = function(){
     localStorage['currentUser'] = null;
+    $state.go('search');
     return true;
   };
   //end logout------------------------------------------------------------------------------------------------------------------------------//
@@ -34,6 +35,8 @@ angular.module('noServerProject').service('mainService', function($http, $q, $st
             // console.log('service JSON set', obj);
             localStorage.setItem(n, JSON.stringify(obj));
             swal('Account Created');
+            localStorage.setItem("currentUser", JSON.stringify(n));
+            srvGetUser();
             $state.go('search');
         } else {
             swal('This user already exists\n Please sign in \^\_\^');
@@ -92,6 +95,27 @@ angular.module('noServerProject').service('mainService', function($http, $q, $st
       });
     };
     //-----------------------end search request to API -------------------------------------------------------------------------//
+    //disliked-----------------------------------------------------------------------//
+    // this.disliked = function (obj,currentUser){
+    //
+    //     for(var i = array.length-1; i >= 0; i++){
+    //       if(array[i].name === obj.name &&){
+    //         array.splice(i,1);
+    //       }
+    //
+    //       srvcUser.artists.push(obj);
+    //       localStorage.setItem(user.userName, JSON.stringify(srvcUser));
+    //   }
+    //   if (obj.type === 'album') {
+    //       srvcUser.albums.push(obj);
+    //       localStorage.setItem(srvcUser.userName, JSON.stringify(srvcUser));
+    //   }
+    //   if (obj.type === 'track') {
+    //       srvcUser.tracks.push(obj);
+    //       localStorage.setItem(srvcUser.userName, JSON.stringify(srvcUser));
+    //   }
+    // }
+    //disliked-----------------------------------------------------------------------//
     //Save favorites----------------------------------------------------------------------------------------------------------------//
     this.saveInfo = function(obj) {
       // console.log('saveInfo srv', localStorage.getItem('currentUser'));

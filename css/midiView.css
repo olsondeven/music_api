@@ -1,7 +1,10 @@
 .midi-wrapper{
+  color: white;
   height: 50vh;
   width: 62vw;
   border: 1px solid red;
+  background-color: #121314;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -28,4 +31,13 @@
 }
 .midi-btn:active{
     box-shadow: -2px -2px red;
+}
+.midi-page{
+  width: 95.54688vw;
+  height: 100%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

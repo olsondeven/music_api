@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Anton|Bree+Serif');
 body{
+  /*position: relative;*/
   margin: 0;
   box-sizing: border-box;
-  background-color: red;
+  background-color: #121314;
   /*color: #FFFFFF; bright*/
   color: #59595C; faded
   /*hover:#DFE0E6*/
@@ -38,6 +39,12 @@ p{
   height: 950px;
   width: 85px;
 }
+/*.midi-index{
+  z-index: 10;
+}
+.menu-index{
+  z-index: 9;
+}*/
 /*.midi-page{
   width: 95.54688vw;
   height: 100%;

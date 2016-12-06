@@ -6,7 +6,7 @@ angular.module('noServerProject').directive('midiDirective', ['$document', '$roo
             //------------------------------midi-toggleshow----------------------------------
             // $('midi-directive').hide();
             // $('#midibtn').on('click', function(){
-            //   $('midi-directive').slideToggle(400);
+            //   $('midi-directive').slideToggle();
             // });
             //------------------------------------------------------------play audio-----------------------------------------------------------------------------
             scope.playAudio = function(selected) {
@@ -14,52 +14,9 @@ angular.module('noServerProject').directive('midiDirective', ['$document', '$roo
                 //chat room and currentTime
                 audio.play();
             };
-            //-----------------------------------------------------------End play audio-----------------------------------------------------------------------------
-            // -------------------------------------------------------------------------drag-start-------------------------------------------------------------------
-            var startX = 0,
-                startY = 0,
-                x = 0,
-                y = 0;
-            element.css({
-                position: 'relative',
-                cursor: 'pointer'
-            });
-            element.on('mousedown', function(event) {
-                // Prevent default dragging of selected content
-                event.preventDefault();
-                startX = event.pageX - x;
-                startY = event.pageY - y;
-                $document.on('mousemove', mousemove);
-                $document.on('mouseup', mouseup);
-            });
-
-            function mousemove(event) {
-                y = event.pageY - startY;
-                x = event.pageX - startX;
-                element.css({
-                    top: y + 'px',
-                    left: x + 'px'
-                });
-            }
-
-            function mouseup() {
-                $document.off('mousemove', mousemove);
-                $document.off('mouseup', mouseup);
-            }
-            // ----------------------------------------------------------------------end-drag-----------------------------------------------------------------------------------
-        },
-        controller: function($scope) {
             var dubStep = new Audio('./audio/funk_dubstep_loop.wav');
             var wob = new Audio('./audio/wob_loop.wav');
             var catDrum = new Audio('./audio/catDrum_loop.wav');
-
-            // setInterval(function () {
-            //   // console.log(audio.currentTime);
-            //   $scope.cur = audio.currentTime;
-            //   $scope.dur = audio.duration;
-            //   // console.log('durations',dur);
-            //   // scope.digest();
-            // }, 100);
             document.addEventListener('keydown' || 'keyup', function() {
                 if (event.keyCode === 110) { //.
                     audio = new Audio('./audio/nice_pluck.wav');
@@ -108,6 +65,39 @@ angular.module('noServerProject').directive('midiDirective', ['$document', '$roo
                     catDrum.play();
                 }
             });
+            //-----------------------------------------------------------End play audio-----------------------------------------------------------------------------
+            // -------------------------------------------------------------------------drag-start-------------------------------------------------------------------
+            // var startX = 0,
+            //     startY = 0,
+            //     x = 0,
+            //     y = 0;
+            // element.css({
+            //     position: 'relative',
+            //     cursor: 'pointer'
+            // });
+            // element.on('mousedown', function(event) {
+            //     // Prevent default dragging of selected content
+            //     event.preventDefault();
+            //     startX = event.pageX - x;
+            //     startY = event.pageY - y;
+            //     $document.on('mousemove', mousemove);
+            //     $document.on('mouseup', mouseup);
+            // });
+            //
+            // function mousemove(event) {
+            //     y = event.pageY - startY;
+            //     x = event.pageX - startX;
+            //     element.css({
+            //         top: y + 'px',
+            //         left: x + 'px'
+            //     });
+            // }
+            //
+            // function mouseup() {
+            //     $document.off('mousemove', mousemove);
+            //     $document.off('mouseup', mouseup);
+            // }
+            // ----------------------------------------------------------------------end-drag-----------------------------------------------------------------------------------
         }
     }
 }]); //closing

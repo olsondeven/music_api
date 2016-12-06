@@ -1,5 +1,6 @@
 <menu-directive></menu-directive>
 <div class="search-wrapper">
+  <!-- <midi-directive class="midi-index"></midi-directive> -->
     <div>
         <h1>SEARCH</h1>
         <input class='search-input' type="text" ng-model='searchTxtArtist' ng-keyup='search(searchTxtArtist,"artist")' placeholder="Search Artist...">
@@ -15,7 +16,7 @@
 
 
         <div ng-if='!displayBoxBool'class="display-box">
-          <div class="artist-card" ng-repeat='obj in arrayObj | filter: searchTxtArtist.name | filter: searchTxtAlbum | filter: searchTxtSong'>
+          <div class="artist-card" ng-repeat='obj in arrayObj'>
             <i  class="material-icons fav-btn" ng-click='liked(obj)'>thumb_up</i>
               <div class="artist-img-wrapper">
                 <img ng-if='artistsBool || albumsBool' class="artist-img" ng-src="{{obj.images[0].url}}" alt="Image of {{obj.name}}">

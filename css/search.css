@@ -26,7 +26,7 @@
 }
 .display-box{
   height: 100%;
-  width: 85vw;
+  width: 95vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -34,7 +34,8 @@
 }
 .fav-btn{
   position: absolute;
-  right: 2%;
+  top: .5%;
+  right: 3%;
   cursor: pointer;
   cursor: hand;
   color: rgb(140, 148, 255);
@@ -68,10 +69,10 @@
 .artist-img{
   height: 40vh;
   width: 20vw;
-border-radius: 3px;
+  border-radius: 3px;
 }
 .audio-play{
   /*border-radius: px;*/
   color:#1C1C1F;
-  background-color: #FFFFFF;
+  background-color: #1C1C1F;
 }

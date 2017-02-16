@@ -9,7 +9,6 @@ angular.module('noServerProject').directive('menuDirective',function(mainService
       $('.setting').on('mouseleave',function(){
         $('.setting-pop').hide('animated');
       });
-
     },
     controller: function($scope,$state,$rootScope,mainService){
           $scope.$on("getUser",function(event, args){

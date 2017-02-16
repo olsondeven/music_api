@@ -13,7 +13,7 @@
         <div ng-if='!displayBoxBool'class="display-box-fav">
           <div class="artist-card" ng-repeat='obj in arrayObj | filter: searchTxtArtist.name | filter: searchTxtAlbum | filter: searchTxtSong'>
               <div class="artist-img-wrapper">
-                <i  class="material-icons fav-btn" ng-click='liked(obj)'>thumb_up</i>
+                <i  id="like-thumb" class="material-icons fav-btn" ng-click='liked(obj)'>thumb_up</i>
                 <img ng-if='artistsBool || albumsBool' class="artist-img" ng-src="{{obj.images[0].url}}" alt="Image of {{obj.name}}">
                 <img ng-if='tracksBool' class="artist-img" ng-src="{{obj.album.images[0].url}}" alt="Image of {{obj.name}}">
               </div>

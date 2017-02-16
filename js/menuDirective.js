@@ -9,19 +9,17 @@ angular.module('noServerProject').directive('menuDirective',function(mainService
       $('.setting').on('mouseleave',function(){
         $('.setting-pop').hide('animated');
       });
+
     },
-    controller: function($scope,$state,mainService){
-          $scope.noFav = function(){
-            if($scope.currentUser){
-              $state.go('favorites');
-            }else{
-              swal('Please login to see favorites');
-            }
-          }
+    controller: function($scope,$state,$rootScope,mainService){
+          $scope.$on("getUser",function(event, args){
+            $scope.currentUser = mainService.getCurrentUser();
+          });
           $scope.currentUser = mainService.getCurrentUser();
           $scope.logout = function() {
           $scope.displayBoxBool = mainService.logout();
           $scope.currentUser = mainService.getCurrentUser();
+          // $rootScope.$broadcast('getUser');
       };
     }
   };//return closing

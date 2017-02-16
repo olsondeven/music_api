@@ -1,11 +1,12 @@
+<div class="menu-placeholder"></div>
 <div class="menu-wrapper">
     <div class="menu-btn-container">
-        <div class="img-wrapper">
-            <img src="./img/grey.png" width='80%' alt="spotifyIcon" />
+        <div class="img-wrapper hand" ui-sref='login'>
+            <img src="./img/grey.png" width='80%'  alt="spotifyIcon" />
         </div>
-        <span class="hand menu-btn" ui-sref='search'><i class="material-icons md-48">search</i><span class="menu-txt">Search</span></span>
-        <span ng-click='noFav()' class="hand menu-btn"><i class="material-icons md-48">library_music</i><span class="menu-txt">Favorites</span></span>
-        <span id='midibtn' class="hand menu-btn" ui-sref='midiPage'><i class="material-icons md-48">music_note</i><span class="menu-txt">MIDI CTRL</span></span>
+        <span class="hand menu-btn" ui-sref='search' ui-sref-active="navbar-current"><i class="material-icons md-48">search</i><span class="menu-txt">Search</span></span>
+        <span ui-sref='favorites' ui-sref-active="navbar-current" class="hand menu-btn"><i class="material-icons md-48">library_music</i><span class="menu-txt">Favorites</span></span>
+        <span id='midibtn' class="hand menu-btn" ui-sref='midiPage' ui-sref-active="navbar-current"><i class="material-icons md-48">music_note</i><span class="menu-txt">MIDI CTRL</span></span>
     </div>
     <span class="setting">
 

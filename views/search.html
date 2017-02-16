@@ -6,27 +6,22 @@
         <input class='search-input' type="text" ng-model='searchTxtSong' ng-keyup='search(searchTxtSong,"track")' placeholder="Search Song...">
     </div>
 
-    <span class="result-wrapper">
-      <div ng-show='page' class="display-button">
-        <i ng-click='setPage(page,"next")' class="material-icons hand search-btn">navigate_next</i>
-        <i ng-click='setPage(page,"pervious")' class="material-icons hand search-btn">navigate_before</i>
-      </div>
-
-
-        <div ng-if='!displayBoxBool'class="display-box">
-          <div class="artist-card" ng-repeat='obj in arrayObj'>
-            <i  class="material-icons fav-btn" ng-click='liked(obj)'>thumb_up</i>
+    <div ng-show='page' class="display-button">
+      <i ng-click='setPage(page,"next")' class="material-icons hand search-btn">navigate_next</i>
+      <i ng-click='setPage(page,"pervious")' class="material-icons hand search-btn">navigate_before</i>
+    </div>
+        <div ng-if='!displayBoxBool'class="display-box-fav">
+          <div class="artist-card" ng-repeat='obj in arrayObj | filter: searchTxtArtist.name | filter: searchTxtAlbum | filter: searchTxtSong'>
               <div class="artist-img-wrapper">
+                <i  class="material-icons fav-btn" ng-click='liked(obj)'>thumb_up</i>
                 <img ng-if='artistsBool || albumsBool' class="artist-img" ng-src="{{obj.images[0].url}}" alt="Image of {{obj.name}}">
                 <img ng-if='tracksBool' class="artist-img" ng-src="{{obj.album.images[0].url}}" alt="Image of {{obj.name}}">
               </div>
-              <h2 class="hand"ng-if='artistsBool'>{{obj.name}}</h2>
-              <p class='hand' ng-if='albumsBool || tracksBool'>{{obj.name}} <span style="color: gray; font-family: Bree Serif;">by</span> {{obj.artists[0].name}}</p>
-              <audio class='audio-play' ng-if='tracksBool' controls="controls">
+              <h2 ng-if='artistsBool'>{{obj.name}}</h2>
+              <p ng-if='albumsBool || tracksBool'>{{obj.name}} <span style="color: gray; font-family: Bree Serif;">by</span> {{obj.artists[0].name}}</p>
+              <audio ng-if='tracksBool' controls="controls">
                 <source ng-src="{{trustSrc(obj.preview_url)}}" type="audio/mp3">
               </audio>
             </div>
           </div>
-
-        </span>
 </div>

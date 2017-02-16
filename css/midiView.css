@@ -33,8 +33,8 @@
     box-shadow: -2px -2px red;
 }
 .midi-page{
-  width: 95.54688vw;
-  height: 100%;
+  width: calc(100vw - 85px);
+  height: 100vh;
   background-color: black;
   display: flex;
   flex-direction: column;

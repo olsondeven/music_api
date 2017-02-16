@@ -1,4 +1,4 @@
-noServerProject.controller('loginCtrl', function($scope, $timeout,$state, mainService) {
+noServerProject.controller('loginCtrl', function($scope, $timeout,$state, $rootScope,mainService) {
   $scope.currentUser = mainService.getCurrentUser();
   var count = 0;
     if($scope.currentUser){
@@ -24,7 +24,8 @@ noServerProject.controller('loginCtrl', function($scope, $timeout,$state, mainSe
         swal('incorret username or password');
       }
         mainService.userLogin(n, p);
-        $scope.currentUser = mainService.getCurrentUser();
+        // $scope.currentUser = mainService.getCurrentUser();
+        $rootScope.$broadcast('getUser');
         $scope.userName = '';
         $scope.userPassword = '';
     };

@@ -1,5 +1,6 @@
 angular.module('noServerProject').controller('mainCtrl', function($scope, $sce, $timeout, mainService) {
     //-------------------------------------------searchfunctions-----------------------------------------------------------------------------------------------//
+    $scope.testArr = [1,2,3,4,5,6,7,8];
     $scope.search = function(str, type) {
       // console.log(event.keyCode);
         if (str !== '') {

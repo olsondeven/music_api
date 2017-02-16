@@ -1,8 +1,12 @@
 noServerProject.controller('favCtrl',function($scope,$sce,$state,mainService){
   $scope.currentUser = mainService.getCurrentUser();
   // console.log($state.current);
+
   console.log($scope.currentUser);
   $scope.displayFav = function(type){
+    if(!$scope.currentUser){
+      return swal("Please login");
+    }
     // console.log('fired?');
     if (type === 'artists') {
       if ($scope.currentUser.artists[0]) {

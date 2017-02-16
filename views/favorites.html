@@ -1,5 +1,5 @@
 <div class="favorites-wrapper">
-  
+
 <div class="fav-header">
 <h1 class="fav-user">{{currentUser.userName}}</h1>
 <h1 ng-click='displayFav("artists")'class="hand selected">view artists</h1>
@@ -7,12 +7,10 @@
 <h1 ng-click='displayFav("tracks")'class="hand selected">view songs</h1>
 </div>
 
-<span class="result-wrapper">
-
-  <div ng-if='!displayBoxBool'class="display-box">
+  <div ng-if='!displayBoxBool'class="display-box-fav">
     <div class="artist-card" ng-repeat='obj in arrayObj | filter: searchTxtArtist.name | filter: searchTxtAlbum | filter: searchTxtSong'>
-      <i  class="material-icons md-neg neg-btn hand" ng-click='disLiked(obj)'>remove</i>
         <div class="artist-img-wrapper">
+          <i  class="material-icons md-neg neg-btn hand" ng-click='disLiked(obj)'>remove</i>
           <img ng-if='artistsBool || albumsBool' class="artist-img" ng-src="{{obj.images[0].url}}" alt="Image of {{obj.name}}">
           <img ng-if='tracksBool' class="artist-img" ng-src="{{obj.album.images[0].url}}" alt="Image of {{obj.name}}">
         </div>
@@ -23,7 +21,5 @@
         </audio>
       </div>
     </div>
-
-</span>
 
 </div>

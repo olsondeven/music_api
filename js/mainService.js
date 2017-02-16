@@ -91,25 +91,26 @@ angular.module('noServerProject').service('mainService', function($http, $q, $st
     };
     //-----------------------end search request to API -------------------------------------------------------------------------//
     //disliked-----------------------------------------------------------------------//
-    // this.disliked = function (obj,currentUser){
-    //
-    //     for(var i = array.length-1; i >= 0; i++){
-    //       if(array[i].name === obj.name &&){
-    //         array.splice(i,1);
-    //       }
-    //
-    //       srvcUser.artists.push(obj);
-    //       localStorage.setItem(user.userName, JSON.stringify(srvcUser));
-    //   }
-    //   if (obj.type === 'album') {
-    //       srvcUser.albums.push(obj);
-    //       localStorage.setItem(srvcUser.userName, JSON.stringify(srvcUser));
-    //   }
-    //   if (obj.type === 'track') {
-    //       srvcUser.tracks.push(obj);
-    //       localStorage.setItem(srvcUser.userName, JSON.stringify(srvcUser));
-    //   }
-    // }
+    this.disLiked = function (obj){
+      console.log('dislike SRVC\n',obj,'\n','\n',srvcUser);
+
+        for (var i = srvcUser.artists.length-1; i >=0; i--) {
+          if(srvcUser.artists[i].name === obj.name){
+            srvcUser.artists.splice(i,1);
+          }
+        }
+        for (var i = srvcUser.albums.length-1; i >=0; i--) {
+          if(srvcUser.albums[i].name === obj.name){
+            srvcUser.albums.splice(i,1);
+          }
+        }
+        for (var i = srvcUser.tracks.length-1; i >=0; i--) {
+          if(srvcUser.tracks[i].name === obj.name){
+            srvcUser.tracks.splice(i,1);
+          }
+        }
+        localStorage.setItem(srvcUser.userName, JSON.stringify(srvcUser));
+    };
     //disliked-----------------------------------------------------------------------//
     //Save favorites----------------------------------------------------------------------------------------------------------------//
     this.saveInfo = function(obj) {

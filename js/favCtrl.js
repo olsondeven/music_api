@@ -38,9 +38,18 @@ noServerProject.controller('favCtrl',function($scope,$sce,$state,mainService){
     }
   }
   };
-  // $scope.disliked = function(obj){
-  //
-  // };
+
+  $scope.disLiked = function(obj){
+    //take it off of the array view
+    for (var i = $scope.arrayObj.length-1; i >=0; i--) {
+      if($scope.arrayObj[i].name === obj.name){
+        $scope.arrayObj.splice(i,1);
+      }
+    }
+    //take it off of the array in localStorage/service
+    mainService.disLiked(obj);
+  };
+
   $scope.trustSrc = function(url) {
       return $sce.trustAsResourceUrl(url);
   };

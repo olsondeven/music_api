@@ -1,16 +1,6 @@
 noServerProject.controller('loginCtrl', function($scope, $timeout,$state, mainService) {
   $scope.currentUser = mainService.getCurrentUser();
   var count = 0;
-    // $scope.currentUser = mainService.getCurrentUser();
-    // $timeout(function() {
-    //     $scope.$watch('currentUser', function() {
-    //         var str = 'current user';
-    //         // return (str,++count,str,$scope.currentUser);
-    //         return console.log(++count,'watch',$scope.currentUser);
-    //     });
-    // }, 2000);
-    //create user----------------------------------------------------------------------//
-    // console.log($scope.currentUser);
     if($scope.currentUser){
       $state.go('favorites');
     }

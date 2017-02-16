@@ -1,11 +1,6 @@
 angular.module('noServerProject').service('mainService', function($http, $q, $state) {
   var srvcUser;
-  // this.getTest = function(){
-  //   $http({
-  //     method: 'GET',
-  //     url: ' '
-  //   });
-  // };
+
   function srvGetUser () {
     if(localStorage.getItem('currentUser')){
         srvcUser = JSON.parse(localStorage.getItem(JSON.parse(localStorage.getItem('currentUser'))));

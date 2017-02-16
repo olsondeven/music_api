@@ -22,9 +22,7 @@ angular.module('noServerProject').directive('menuDirective',function(mainService
           $scope.logout = function() {
           $scope.displayBoxBool = mainService.logout();
           $scope.currentUser = mainService.getCurrentUser();
-          // console.log('directive logout fn', scope.currentUser);
       };
-      // console.log('\$directive', $scope.currentUser);
     }
-  };
+  };//return closing
 });//closing

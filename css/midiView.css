@@ -1,6 +1,6 @@
 .midi-wrapper{
   color: white;
-  height: 50vh;
+  height: 80vh;
   width: 62vw;
   border: 1px solid red;
   background-color: #121314;
@@ -12,25 +12,26 @@
 }
 .midi-controller{
   width: 100%;
-  height: 10%;
-  /*border: 1px solid red;*/
+  height: 28%;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 .midi-btn{
+  font-size: 1em;
+  color: black;
   height: 100%;
-  width: 15%;
-  background-color: purple;
+  width: 20%;
+  background-color: #8BD7E4;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 2px 2px red;
+  box-shadow: 2px 2px #8BD7E8;
   border-radius: 10px;
   cursor: pointer; cursor: hand;
 }
 .midi-btn:active{
-    box-shadow: -2px -2px red;
+    box-shadow: -2px -2px #8BD7E8;
 }
 .midi-page{
   width: calc(100vw - 85px);

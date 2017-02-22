@@ -17,6 +17,15 @@ angular.module('noServerProject').directive('midiDirective', ['$document', '$roo
             var dubStep = new Audio('./audio/funk_dubstep_loop.wav');
             var wob = new Audio('./audio/wob_loop.wav');
             var catDrum = new Audio('./audio/catDrum_loop.wav');
+            scope.loopOne = function(){
+              dubStep.play();
+            };
+            scope.loopTwo = function(){
+              wob.play();
+            };
+            scope.loopThree = function(){
+              dubStep.play();
+            };
             document.addEventListener('keydown' || 'keyup', function() {
                 if (event.keyCode === 110) { //.
                     audio = new Audio('./audio/nice_pluck.wav');

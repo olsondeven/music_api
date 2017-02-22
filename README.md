@@ -38,7 +38,7 @@ favorites list.
 There are three input boxes at the top of the page. First input box is for searching artists, the second is for searching albums,
 and the last input is for tracks. Spotify only allows 30 second clips of their tracks to be requested. There will be a thumbs up button
 on each artist, album, or track. Press this if you would like to add the item to your favorites list. Once added to your favorites list,
-you can view them by pressing the favorites button on the side menu.
+you can view them by pressing the favorites button on the side menu. There are previous and next page buttons at the top right of the page.
 
 ##Midi Controller
 

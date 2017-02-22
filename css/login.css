@@ -18,7 +18,7 @@
   width: auto;
 }
 .create-wrapper{
-  width: 100vw;
+  width: calc(100vw - 85px);
   height: 100vh;
   background-color: #121314;
   display: flex;

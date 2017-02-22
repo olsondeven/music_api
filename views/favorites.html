@@ -8,7 +8,7 @@
 </div>
 
   <div ng-if='!displayBoxBool'class="display-box-fav">
-    <div class="artist-card" ng-repeat='obj in arrayObj | filter: searchTxtArtist.name | filter: searchTxtAlbum | filter: searchTxtSong'>
+    <div class="artist-card" ng-repeat='obj in arrayObj'>
         <div class="artist-img-wrapper">
           <i  class="material-icons md-neg neg-btn hand" ng-click='disLiked(obj)'>remove</i>
           <img ng-if='artistsBool || albumsBool' class="artist-img" ng-src="{{obj.images[0].url}}" alt="Image of {{obj.name}}">

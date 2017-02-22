@@ -17,8 +17,8 @@
 }
 .fav-btn{
   position: absolute;
-  top: 30px;
-  right: 20px;
+  bottom: 40px;
+  right: 30px;
   cursor: pointer;
   color: rgb(140, 148, 255);
   z-index: 7;

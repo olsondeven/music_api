@@ -36,21 +36,6 @@ p{
   cursor: hand;
 }
 .menu-placeholder{
-  height: 950px;
+  height: 100%;
   width: 85px;
 }
-/*.midi-index{
-  z-index: 10;
-}
-.menu-index{
-  z-index: 9;
-}*/
-/*.midi-page{
-  width: 95.54688vw;
-  height: 100%;
-  background-color: black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}*/

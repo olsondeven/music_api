@@ -5,6 +5,7 @@
   background-color: #121314;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 .display-button{
@@ -17,8 +18,8 @@
 }
 .fav-btn{
   position: absolute;
-  bottom: 40px;
-  right: 30px;
+  top: 30px;
+  right: 10px;
   cursor: pointer;
   color: rgb(140, 148, 255);
   z-index: 7;
@@ -36,13 +37,10 @@
   width: 400px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
   text-align: center;
-  padding-left: 150px;
+  padding-left: 20px;
 }
 .artist-img-wrapper{
   max-width: 100%;
@@ -63,14 +61,15 @@
   color:#1C1C1F;
   background-color: #1C1C1F;
 }
-
+.display-box-fav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
 @media(max-width: 1733px) {
-  .artist-card{
-    padding-left: 250px;
-  }
+
 }
 @media(max-width: 1384px) {
-  .artist-card{
-    padding-left: 100px;
-  }
+
 }
